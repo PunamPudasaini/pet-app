@@ -121,8 +121,33 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           Container(
+            height: 240,
+            margin: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: <Widget>[
+                Expanded(
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(color: Colors.blueGrey,borderRadius: BorderRadius.circular(20),boxShadow: list),
+                        margin: EdgeInsets.only(top: 40),
+                      ),
+                      Align(
+                        child: Image.asset('assets/pet-cat1.png'),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(top: 60, bottom: 20),
+                    decoration: BoxDecoration(color: Colors.white,boxShadow: list,borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    )),
+
+                  ),
+                )
 
               ],
             ),
