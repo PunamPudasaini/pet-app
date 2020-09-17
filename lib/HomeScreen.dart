@@ -21,141 +21,176 @@ class _HomeScreenState extends State<HomeScreen> {
       duration: Duration(milliseconds: 250),
       color: Colors.white,
 
-      child: Column(
-        children: <Widget>[
+      child: SingleChildScrollView(
 
-          SizedBox(
-          height: 50,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20,),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                isdrawer?IconButton(icon:  Icon(Icons.arrow_back), onPressed: (){
-                  setState(() {
-                     xofset = 0;
-                     yofset = 0;
-                     scalefactor = 1;
-                     isdrawer = false;
-                  });
-                }):
-               IconButton(icon: Icon(Icons.menu), onPressed: (){
-                 setState(() {
-                   xofset=230;
-                   yofset=150;
-                   scalefactor=0.6;
-                   isdrawer=true;
-                 });
+        child: Column(
+          children: <Widget>[
 
-               },),
-
-                Column(
-                  children: <Widget>[
-                    Text('Location'),
-                    Row(
-                      children: <Widget>[
-                        IconButton(icon: Icon(Icons.location_on, color: primarycolor,)),
-                        Text('Bhadrawas,Kathamandu'),
-                      ],
-                    ),
-                  ],
-                ),
-              CircleAvatar(),
-              ],
-
-
+            SizedBox(
+            height: 50,
             ),
-          ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20,),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  isdrawer?IconButton(icon:  Icon(Icons.arrow_back), onPressed: (){
+                    setState(() {
+                       xofset = 0;
+                       yofset = 0;
+                       scalefactor = 1;
+                       isdrawer = false;
+                    });
+                  }):
+                 IconButton(icon: Icon(Icons.menu), onPressed: (){
+                   setState(() {
+                     xofset=230;
+                     yofset=150;
+                     scalefactor=0.6;
+                     isdrawer=true;
+                   });
 
-          Container(
-            padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 10.0),
-            child: TextField(
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
+                 },),
 
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: primarycolor),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
-
-                prefixIcon: Icon(Icons.search,color: primarycolor,),
-                hintText: "Search Pet",
-                filled: true,
-                fillColor: Colors.grey[200],
+                  Column(
+                    children: <Widget>[
+                      Text('Location'),
+                      Row(
+                        children: <Widget>[
+                          IconButton(icon: Icon(Icons.location_on, color: primarycolor,)),
+                          Text('Bhadrawas,Kathamandu'),
+                        ],
+                      ),
+                    ],
+                  ),
+                CircleAvatar(),
+                ],
 
 
               ),
             ),
-          ),
 
-          Container(
-            height: 120,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: categories.length,
-              itemBuilder: (context,index){
-                return Container(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        margin: EdgeInsets.only(left: 20,top: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: list,
-                          borderRadius: BorderRadius.circular(10),
-
-                        ),
-                        child: Image.asset(categories[index]['iconPath'],height: 50, width: 50,),
-                      ),
-                      Text(categories[index]['name']),
-                    ],
+            Container(
+              padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.transparent),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                   ),
-                );
-              },
-            ),
-          ),
 
-          Container(
-            height: 240,
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(color: Colors.blueGrey,borderRadius: BorderRadius.circular(20),boxShadow: list),
-                        margin: EdgeInsets.only(top: 40),
-                      ),
-                      Align(
-                        child: Image.asset('assets/pet-cat1.png'),
-                      ),
-                    ],
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: primarycolor),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
                   ),
+
+                  prefixIcon: Icon(Icons.search,color: primarycolor,),
+                  hintText: "Search Pet",
+                  filled: true,
+                  fillColor: Colors.grey[200],
+
+
                 ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(top: 60, bottom: 20),
-                    decoration: BoxDecoration(color: Colors.white,boxShadow: list,borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
-                    )),
-
-                  ),
-                )
-
-              ],
+              ),
             ),
-          ),
+
+            Container(
+              height: 120,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context,index){
+                  return Container(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.only(left: 20,top: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: list,
+                            borderRadius: BorderRadius.circular(10),
+
+                          ),
+                          child: Image.asset(categories[index]['iconPath'],height: 50, width: 50,),
+                        ),
+                        Text(categories[index]['name']),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+
+            Container(
+              height: 240,
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(color: Colors.blueGrey,borderRadius: BorderRadius.circular(20),boxShadow: list),
+                          margin: EdgeInsets.only(top: 40),
+                        ),
+                        Align(
+                          child: Image.asset('assets/pet-cat1.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 60, bottom: 20),
+                      decoration: BoxDecoration(color: Colors.white,boxShadow: list,borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      )),
+
+                    ),
+                  )
+
+                ],
+              ),
+            ),
+            Container(
+              height: 240,
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(color: Colors.orangeAccent,borderRadius: BorderRadius.circular(20),boxShadow: list),
+                          margin: EdgeInsets.only(top: 40),
+                        ),
+                        Align(
+                          child: Image.asset('assets/pet-cat2.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 60, bottom: 20),
+                      decoration: BoxDecoration(color: Colors.white,boxShadow: list,borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      )),
+
+                    ),
+                  )
+
+                ],
+              ),
+            ),
 
 
-        ],
+          ],
 
+        ),
       ),
     );
   }
