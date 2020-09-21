@@ -73,7 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  CircleAvatar(),
+                  CircleAvatar(
+                   backgroundImage: AssetImage('assets/punam.jpg'),
+
+                  ),
                 ],
               ),
             ),
@@ -243,6 +246,48 @@ class _HomeScreenState extends State<HomeScreen> {
                             topRight: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           )),
+
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text('Orion', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                IconButton(
+                                    icon:
+                                    Icon(Icons.mail, color: primarycolor)),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text('Abysianan Cat' , style: TextStyle(fontSize: 17),),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text('5 years old', style: TextStyle(fontSize: 14),),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              IconButton(
+                                icon: Icon(Icons.location_on,
+                                    color: primarycolor),
+                              ),
+                              Text('Distance 2.6 km'),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],

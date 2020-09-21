@@ -69,12 +69,13 @@ class Screen2 extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15),
+              margin: EdgeInsets.symmetric(horizontal: 5),
               height: 130,
               width: 450,
               child: Row(
                 children: <Widget>[
                   Container(
+                    margin: EdgeInsets.only(left: 10, right: 10),
                     width: 50,
                     height: 50,
                     child: Icon(Icons.favorite_border,color: Colors.white,),
@@ -90,6 +91,7 @@ class Screen2 extends StatelessWidget {
 
                   Expanded(
                     child: Container(
+                      margin: EdgeInsets.only(left: 10, right: 10),
                       width: 50,
                       height: 50,
                       child:

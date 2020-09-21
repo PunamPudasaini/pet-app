@@ -18,7 +18,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              CircleAvatar(),
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/punam.jpg'),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Column(
